@@ -116,6 +116,7 @@ generate2:
     
 next4:
     MOV R0, #0
+        BL prompt
     LDR R1, =a
     
 read_arrays:
@@ -147,7 +148,7 @@ read_arrays:
     POP {R0}
     
     ADD R0, R0, #1
-    BL prompt
+
     
     B read_arrays
     
