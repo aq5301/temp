@@ -51,14 +51,12 @@ sort_ascending:
     ADD R4, R3, R4
     
     ADD R7, R6, #1
-    BL moveToSort
+    BL sort_ascendingInner
     MOV R7, #0
     
     ADD R6, R6, #1
     B sort_ascending
 
-moveToSort:
-    MOV R7, #0
     
 sort_ascendingInner:
     CMP R7, #20
