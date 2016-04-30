@@ -115,10 +115,10 @@ generate2:
     B generate2
     
 next4:
-    MOV R0, #0
+    MOV R5, #0
     
 read_arrays:
-    CMP R0, #20 @R0 is index
+    CMP R5, #20 @R0 is index
     BEQ exit
     
     LDR R1, =a
@@ -147,8 +147,7 @@ read_arrays:
     POP {R1}
     POP {R0}
     
-    ADD R0, R0, #1
-        BL prompt
+    ADD R5, R5, #1
     
     B read_arrays
     
