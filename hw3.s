@@ -26,9 +26,6 @@ generate:
     ADD R4, R3, #1
     NEG R3, R4
 
-    ADD R4, R0, #1
-    LSL R2, R4, #2
-    ADD R2, R1, R2
     STR R3, [R2]
     STR R3, [R7]
     
