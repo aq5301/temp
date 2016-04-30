@@ -43,7 +43,7 @@ next:
 
 sort_ascending:
     CMP R6, #20
-    BEQ next2
+    BEQ next3
 
     LSL R2, R6, #2 @ for array temp
     ADD R2, R1, R2
@@ -80,24 +80,7 @@ sort_ascendingInner:
     ADD R7, R7, #1
     B sort_ascendingInner
 
-next2:
-    MOV R0, #0
-    LDR R1, =temp
-    LDR R3, =b
-    
-aTob:
-    CMP R0, #20
-    BEQ next3
-    LSL R2, R6, #2 @ for array temp
-    ADD R2, R1, R2
-    LSL R4, R6, #2 @ for array b
-    ADD R4, R3, R4
-    
-    LDR R5, [R2]
-    STR R5, [R4]
-    
-    ADD R0, R0, #1
-    B aTob
+
     
 next3:
     MOV R0, #0
@@ -121,14 +104,14 @@ read_arrays:
     PUSH {R0}
     PUSH {R1}
     PUSH {R2}
-    @PUSH {R3}
+    PUSH {R3}
     
     MOV R2, R1
     MOV R1, R0
     
     BL print
     
-    @POP {R3}
+    POP {R3}
     POP {R2}
     POP {R1}
     POP {R0}
