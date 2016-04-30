@@ -29,8 +29,9 @@ generate:
     ADD R4, R0, #1
     LSL R2, R4, #2
     ADD R2, R1, R2
+    
     LSL R7, R4, #2
-    ADD R7, R1, R7
+    ADD R7, R6, R7
     
     STR R3, [R2]
     STR R3, [R7]
