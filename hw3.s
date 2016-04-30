@@ -15,16 +15,22 @@ generate:
     LDR R1, =a
     LSL R2, R0, #2
     ADD R2, R1, R2
+    LDR R6, =temp
+    LSL R7, R0, #2
+    ADD R7, R6, R7
+
 
     ADD R3, R5, R0
-    STR R3, [R2]          
+    STR R3, [R2] 
+    STR R3, [R7]
     ADD R4, R3, #1
     NEG R3, R4
 
-    ADD R6, R0, #1
-    LSL R2, R6, #2
+    ADD R4, R0, #1
+    LSL R2, R4, #2
     ADD R2, R1, R2
     STR R3, [R2]
+    STR R3, [R7]
     
     ADD R0, R0, #2
     B generate
@@ -33,14 +39,14 @@ next:
     MOV R6, #0
     MOV R7, #0
         
-    LDR R1, =a
+    LDR R1, =temp
     LDR R3, =b
 
 sort_ascending:
     CMP R6, #20
     BEQ next2
 
-    LSL R2, R6, #2 @ for array a
+    LSL R2, R6, #2 @ for array temp
     ADD R2, R1, R2
     LSL R4, R6, #2 @ for array b
     ADD R4, R3, R4
@@ -58,7 +64,7 @@ moveToSort:
 sort_ascendingInner:
     CMP R7, #20
     MOVEQ PC, LR
-    LSL R8, R7, #2 @ a
+    LSL R8, R7, #2 @ temp
     ADD R8, R1, R8
     
     LDR R11, [R2] @ this is index
@@ -77,11 +83,13 @@ sort_ascendingInner:
 
 next2:
     MOV R0, #0
+    LDR R1, =temp
+    LDR R3, =b
     
 aTob:
     CMP R0, #20
     BEQ next3
-    LSL R2, R6, #2 @ for array a
+    LSL R2, R6, #2 @ for array temp
     ADD R2, R1, R2
     LSL R4, R6, #2 @ for array b
     ADD R4, R3, R4
@@ -93,17 +101,16 @@ aTob:
     B aTob
 next3:
     MOV R0, #0
+    LDR R1, =a
+    LDR R3, =b
 
-    
 read_arrays:
     CMP R0, #20 @R0 is index
     BEQ exit
-    
-    LDR R1, =a
+
     LSL R2, R0, #2 @a
     ADD R2, R1, R2
 
-    LDR R3, =b
     LSL R4, R0, #2 @b
     ADD R4, R3, R4
     
@@ -126,7 +133,6 @@ read_arrays:
     POP {R0}
     
     ADD R0, R0, #1
-    BL prompt
     
     B read_arrays
     
@@ -165,6 +171,7 @@ scanint:
 
 .balign 4
 a:              .skip       80
+temp:           .skip       80
 b:              .skip       80
 num_str:        .asciz      "%d"
 print_str:      .asciz      "array_a[%d] = %d, array_b = %d\n"
