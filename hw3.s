@@ -93,32 +93,10 @@ aTob:
     B aTob
 next3:
     MOV R0, #0
-    
-generate2:
-    CMP R0, #20 
-    BEQ next4
-    LDR R1, =a
-    LSL R2, R0, #2
-    ADD R2, R1, R2
 
-    ADD R3, R5, R0
-    STR R3, [R2]          
-    ADD R4, R3, #1
-    NEG R3, R4
-
-    ADD R6, R0, #1
-    LSL R2, R6, #2
-    ADD R2, R1, R2
-    STR R3, [R2]
-    
-    ADD R0, R0, #2
-    B generate2
-    
-next4:
-    MOV R5, #0
     
 read_arrays:
-    CMP R5, #20 @R0 is index
+    CMP R0, #20 @R0 is index
     BEQ exit
     
     LDR R1, =a
@@ -147,7 +125,7 @@ read_arrays:
     POP {R1}
     POP {R0}
     
-    ADD R5, R5, #1
+    ADD R0, R0, #1
     
     B read_arrays
     
