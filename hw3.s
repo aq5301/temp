@@ -100,12 +100,13 @@ aTob:
     B aTob
 next3:
     MOV R0, #0
-BL prompt
+
     LDR R1, =a
     LDR R3, =b
-    BL prompt
+
 
 read_arrays:
+BL prompt
     CMP R0, #20 @R0 is index
     BEQ exit
 
