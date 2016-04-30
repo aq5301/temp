@@ -77,7 +77,6 @@ sort_ascendingInner:
 
 next2:
     MOV R0, #0
-    BL prompt
     
 aTob:
     CMP R0, #20
@@ -94,7 +93,6 @@ aTob:
     B aTob
 next3:
     MOV R0, #0
-    BL prompt
     
 generate2:
     CMP R0, #20 
@@ -118,7 +116,7 @@ generate2:
     
 next4:
     MOV R0, #0
-    BL prompt
+    LDR R1, =a
     
 read_arrays:
     CMP R0, #20 @R0 is index
@@ -149,7 +147,7 @@ read_arrays:
     POP {R0}
     
     ADD R0, R0, #1
-    
+    BL prompt
     
     B read_arrays
     
