@@ -83,14 +83,16 @@ sort_ascendingInner:
 
 next2:
     MOV R0, #0
-    LDR R1, =temp
-    LDR R3, =b
+    
+    
     
 aTob:
     CMP R0, #20
     BEQ next3
+    LDR R1, =temp
     LSL R2, R0, #2 @ for array temp
     ADD R2, R1, R2
+    LDR R3, =b
     LSL R4, R0, #2 @ for array b
     ADD R4, R3, R4
     
