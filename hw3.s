@@ -38,7 +38,7 @@ generate:
 next:
     MOV R6, #0
     MOV R7, #0
-        
+        BL prompt
     LDR R1, =temp
     LDR R3, =b
 
@@ -83,6 +83,7 @@ sort_ascendingInner:
 
 next2:
     MOV R0, #0
+    BL prompt
     LDR R1, =temp
     LDR R3, =b
     
@@ -101,6 +102,7 @@ aTob:
     B aTob
 next3:
     MOV R0, #0
+    BL prompt
     LDR R1, =a
     LDR R3, =b
 
