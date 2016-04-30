@@ -114,7 +114,7 @@ read_arrays:
     LSL R2, R0, #2 @a
     ADD R2, R1, R2
 
-    LDR R3, =b
+    LDR R3, =temp
     LSL R4, R0, #2 @b
     ADD R4, R3, R4
     
