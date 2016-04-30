@@ -116,11 +116,8 @@ generate2:
     
 next4:
     MOV R0, #0
-        BL prompt
-
     
 read_arrays:
-    BL prompt
     CMP R0, #20 @R0 is index
     BEQ exit
     
