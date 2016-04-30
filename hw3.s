@@ -111,7 +111,7 @@ read_arrays:
     LSL R2, R0, #2 @a
     ADD R2, R1, R2
 
-     LDR R3, =b
+    LDR R3, =b
     LSL R4, R0, #2 @b
     ADD R4, R3, R4
     
@@ -121,14 +121,14 @@ read_arrays:
     PUSH {R0}
     PUSH {R1}
     PUSH {R2}
-    PUSH {R3}
+    @PUSH {R3}
     
     MOV R2, R1
     MOV R1, R0
     
     BL print
     
-    POP {R3}
+    @POP {R3}
     POP {R2}
     POP {R1}
     POP {R0}
