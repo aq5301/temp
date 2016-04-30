@@ -37,22 +37,17 @@ generate:
     
 next:
     MOV R6, #0
-    MOV R7, #0
-    LDR R1, =a
     LDR R3, =b
 
 sort_ascending:
     CMP R6, #20
     BEQ next2
 
-    LSL R2, R6, #2 @ for array a
-    ADD R2, R1, R2
     LSL R4, R6, #2 @ for array b
     ADD R4, R3, R4
     
     ADD R7, R6, #1
     BL sort_ascendingInner
-    MOV R7, #0
     
     ADD R6, R6, #1
     B sort_ascending
@@ -83,7 +78,6 @@ next2:
     MOV R0, #0
     
 read_arrays:
-
     CMP R0, #20 @R0 is index
     BEQ exit
 
