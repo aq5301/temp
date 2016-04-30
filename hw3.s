@@ -121,9 +121,11 @@ read_arrays:
     CMP R0, #20 @R0 is index
     BEQ exit
     
+    LDR R1, =a
     LSL R2, R0, #2 @a
     ADD R2, R1, R2
 
+    LDR R3, =b
     LSL R4, R0, #2 @b
     ADD R4, R3, R4
     
