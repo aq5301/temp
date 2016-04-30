@@ -50,7 +50,7 @@ sort_ascending:
     LSL R4, R6, #2 @ for array b
     ADD R4, R3, R4
     
-    ADD R7, R7, #1
+    ADD R7, R6, #1
     BL moveToSort
     MOV R7, #0
     
