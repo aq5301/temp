@@ -148,7 +148,7 @@ read_arrays:
     POP {R0}
     
     ADD R0, R0, #1
-
+        BL prompt
     
     B read_arrays
     
@@ -191,4 +191,3 @@ b:              .skip       80
 num_str:        .asciz      "%d"
 print_str:      .asciz      "array_a[%d] = %d, array_b = %d\n"
 prompt_str:     .ascii      "Enter an integer.\n"
-printf_str:     .asciz      "a[%d] = %d\n"
