@@ -126,6 +126,7 @@ read_arrays:
     POP {R0}
     
     ADD R0, R0, #1
+    BL prompt
     
     B read_arrays
     
