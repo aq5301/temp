@@ -94,7 +94,7 @@ aTob:
 next3:
     MOV R0, #0
     
-generate:
+generate2:
     CMP R0, #20 
     BEQ next4
     LDR R1, =a
@@ -112,7 +112,7 @@ generate:
     STR R3, [R2]
     
     ADD R0, R0, #2
-    B generate
+    B generate2
     
 next4:
     MOV R0, #0
