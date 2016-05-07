@@ -60,7 +60,7 @@ maximum:
     ADD R5, R5, #1
     LDR R7, [R2] @ next
     CMP R8, R7
-    MOVGE R8, R7
+    MOVLT R8, R7
     
     B maximum
  
