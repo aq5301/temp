@@ -42,6 +42,7 @@ minimum:
     ADD R5, R5, #1
     LSL R2, R5, #2
     ADD R2, R1, R2
+    
     LDR R7, [R2] @ next
     CMP R6, R7
     MOVGE R6, R7
@@ -61,6 +62,7 @@ maximum:
     ADD R5, R5, #1
     LSL R2, R5, #2
     ADD R2, R1, R2
+    
     LDR R7, [R2] @ next
     CMP R8, R7
     MOVLE R8, R7
@@ -95,7 +97,7 @@ readarray:
     BEQ printother
     
     LDR R4, =a
-    LSL R2, R0, #2 
+    LSL R2, R5, #2 
     ADD R2, R4, R2
         
     LDR R1, [R2]
