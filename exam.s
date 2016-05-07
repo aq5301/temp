@@ -15,11 +15,11 @@ buildarray:
     LSL R2, R5, #2
     ADD R2, R1, R2
     
-    PUSH {R2}
     PUSH {R1}
+    PUSH {R2}
     BL scanf
-    POP {R1}
     POP {R2}
+    POP {R1}
     
     STR R0, [R2]
     
