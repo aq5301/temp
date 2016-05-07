@@ -126,7 +126,7 @@ B exit
 prompt:
 MOV R7, #4
 MOV R0, #1
-MOV R2, #20
+MOV R2, #19
 LDR R1, =prompt_str
 SWI 0
 MOV PC, LR
@@ -149,12 +149,14 @@ BL printf
 POP {PC}
 
 scanf:
-PUSH {LR}        
+MOV R4, LR              
+SUB SP, SP, #4        
 LDR R0, =num_str     
 MOV R1, SP              
 BL scanf                
 LDR R0, [SP]            
-POP {PC}
+ADD SP, SP, #4          
+MOV PC, R4  
   
 .data
 
