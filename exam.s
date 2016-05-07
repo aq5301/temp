@@ -8,8 +8,8 @@ main:
 BL prompt
 MOV R5, #0
 
-readarray:
-CMP R5, 10
+buildarray:
+CMP R5, #10
 BEQ next1
 LDR R1, =a
 LSL R2, R5, #2
