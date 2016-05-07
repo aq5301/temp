@@ -149,14 +149,12 @@ BL printf
 POP {PC}
 
 scanf:
-MOV R4, LR              
-SUB SP, SP, #4          
+PUSH {LR}        
 LDR R0, =num_str     
 MOV R1, SP              
 BL scanf                
 LDR R0, [SP]            
-ADD SP, SP, #4          
-MOV PC, R4 
+POP {PC}
   
 .data
 
