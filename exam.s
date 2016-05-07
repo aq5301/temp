@@ -89,9 +89,9 @@ readarray:
     CMP R5, #10
     BEQ printother
     
-    LDR R1, =a
-    LSL R2, R0, #2 @a
-    ADD R2, R1, R2
+    LDR R4, =a
+    LSL R2, R0, #2 
+    ADD R2, R4, R2
         
     LDR R1, [R2]
         
