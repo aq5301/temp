@@ -15,7 +15,12 @@ LDR R1, =a
 LSL R2, R5, #2
 ADD R2, R1, R2
 
+PUSH {R2}
+PUSH {R1}
 BL scanf
+POP {R1}
+POP {R2}
+
 STR R0, [R2]
 
 ADD R5, R5, #1
