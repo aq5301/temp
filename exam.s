@@ -30,7 +30,6 @@ buildarray:
 
 next1:
     MOV R5, #0
-    LDR R1, =a
     LSL R2, R5, #2
     ADD R2, R1, R2
     LDR R6, [R2] @R6 holds minimum
@@ -49,7 +48,6 @@ minimum:
   
 next2:
     MOV R5, #0
-    LDR R1, =a
     LSL R2, R5, #2
     ADD R2, R1, R2
     LDR R8, [R2] @R8 holds max
@@ -68,7 +66,6 @@ maximum:
  
 next3:
     MOV R5, #0
-    LDR R1, =a
     LSL R2, R5, #2
     ADD R2, R1, R2
     
