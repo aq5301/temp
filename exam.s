@@ -11,13 +11,14 @@ main:
 buildarray:
     CMP R5, #10
     BEQ next1
+    
     LDR R1, =a
     LSL R2, R5, #2
     ADD R2, R1, R2
     
     PUSH {R1}
     PUSH {R2}
-    BL scanf
+    BL scanint
     POP {R2}
     POP {R1}
     
@@ -148,7 +149,7 @@ print2:
     BL printf
     POP {PC}
 
-scanf:
+scanint:
     MOV R4, LR              
     SUB SP, SP, #4        
     LDR R0, =num_str     
