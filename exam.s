@@ -60,6 +60,8 @@ maximum:
     BEQ next3
     
     ADD R5, R5, #1
+    CMP R5, #10
+    BEQ next3
     LSL R2, R5, #2
     ADD R2, R1, R2
     
