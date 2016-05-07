@@ -36,10 +36,9 @@ next1:
 
 
 minimum:
+    ADD R5, R5, #1
     CMP R5, #10
     BEQ next2
-    
-    ADD R5, R5, #1
     LSL R2, R5, #2
     ADD R2, R1, R2
     
@@ -56,9 +55,6 @@ next2:
     LDR R8, [R2] @R8 holds max
 
 maximum:
-    CMP R5, #10
-    BEQ next3
-    
     ADD R5, R5, #1
     CMP R5, #10
     BEQ next3
