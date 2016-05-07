@@ -40,6 +40,8 @@ minimum:
     BEQ next2
     
     ADD R5, R5, #1
+    LSL R2, R5, #2
+    ADD R2, R1, R2
     LDR R7, [R2] @ next
     CMP R6, R7
     MOVGE R6, R7
@@ -52,15 +54,16 @@ next2:
     ADD R2, R1, R2
     LDR R8, [R2] @R8 holds max
 
-
 maximum:
     CMP R5, #10
     BEQ next3
     
     ADD R5, R5, #1
+    LSL R2, R5, #2
+    ADD R2, R1, R2
     LDR R7, [R2] @ next
     CMP R8, R7
-    MOVLT R8, R7
+    MOVLE R8, R7
     
     B maximum
  
@@ -74,6 +77,8 @@ next3:
 sum: 
     CMP R5, #10
     BEQ next4
+    LSL R2, R5, #2
+    ADD R2, R1, R2
     
     LDR R3, [R2] 
     ADD R9, R9, R3 @R9 holds sum
